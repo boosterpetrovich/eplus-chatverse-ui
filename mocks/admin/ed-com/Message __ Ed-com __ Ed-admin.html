@@ -1,0 +1,1702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Message :: Ed-com :: Ed-admin</title>
+	<link rel="icon" type="image/png" href="../../assets/images/favicon.png" />
+
+	<!-- Global stylesheets -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+	<link href="../../assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+	<link href="../../assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="../../assets/css/core.css" rel="stylesheet" type="text/css">
+	<link href="../../assets/css/components.css" rel="stylesheet" type="text/css">
+	<link href="../../assets/css/froala.css" rel="stylesheet" type="text/css">
+	<link href="../../assets/js/plugins/editors/froala/emoticons/emoticons.min.css" rel="stylesheet" type="text/css">
+	<link href="../../assets/css/colors.css" rel="stylesheet" type="text/css">
+	<link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
+	<!-- /global stylesheets -->
+
+    <!-- Core JS files -->
+	<script type="text/javascript" src="../../assets/js/core/libraries/jquery.min.js"></script>
+	<script type="text/javascript" src="../../assets/js/core/libraries/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../../assets/js/plugins/ui/nicescroll.min.js"></script>
+	<script type="text/javascript" src="../../assets/js/plugins/ui/drilldown.js"></script>
+	<!-- /core JS files -->
+
+	<script type="text/javascript" src="../../assets/js/plugins/forms/selects/select2.min.js"></script>
+	<script type="text/javascript" src="../../assets/js/plugins/forms/selects/bootstrap_select.min.js"></script>
+	<script type="text/javascript" src="../../assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
+	<script type="text/javascript" src="../../assets/js/plugins/ui/moment/moment.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/plugins/ui/fullcalendar/fullcalendar.min.js"></script>
+	<script type="text/javascript" src="../../assets/js/plugins/pickers/pickmeup/pickmeup.min.js"></script>
+	<script type="text/javascript" src="../../assets/js/plugins/pickers/clockpicker/bootstrap-clockpicker.js"></script>
+	<script type="text/javascript" src="../../assets/js/plugins/pickers/calendar.js"></script>
+	<script type="text/javascript" src="../../assets/js/plugins/forms/styling/uniform.min.js"></script>
+	<script type="text/javascript" src="../../assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
+	<script type="text/javascript" src="../../assets/js/plugins/editors/froala/froala.js"></script>
+	<script type="text/javascript" src="../../assets/js/plugins/uploaders/dropzone.min.js"></script>
+	<script type="text/javascript" src="../../assets/js/plugins/editors/froala/emoticons/emoticons.min.js"></script>
+	<script type="text/javascript" src="../../assets/js/plugins/typeahead/typeahead.js"></script>
+	<script type="text/javascript" src="../../assets/js/plugins/forms/tags/tagsinput.min.js"></script>
+	<script type="text/javascript" src="../../assets/js/plugins/forms/tags/tokenfield.min.js"></script>
+	<script type="text/javascript" src="../../assets/js/plugins/pickers/emojionearea.min.js"></script>
+
+
+    <script type="text/javascript" src="../../assets/js/core/app-components.js"></script>
+	<script type="text/javascript" src="../../assets/js/admin/ed-com/message.js"></script>
+
+	<script type="text/javascript" src="../../assets/js/plugins/ui/ripple.min.js"></script>
+	<style>
+		
+		.news-type h6 {
+			margin-top: 2px !important;
+		}
+		.news-type .icons-list {
+			margin-top: 4px !important;
+		}
+		.news-type .btn-flat:hover, .btn-flat:focus{
+			opacity: 2 !important;
+			color: #333 !important;
+			box-shadow: none;
+		}
+	</style>
+
+	
+
+</head>
+
+<body class="portal-admin module-ed-com left-nav-message">
+
+	<div class="component-header"></div>
+
+	<!-- Page container -->
+	<div class="page-container">
+
+		<!-- Page content -->
+		<div class="page-content">
+
+			<!-- Main sidebar -->
+			<div class="sidebar sidebar-main sidebar-default">
+				<div class="components-left-navigation"></div>
+			</div>
+			<!-- /main sidebar -->
+
+
+			<!-- Main content -->
+            <div class="content-wrapper">
+
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="line-wrapper">
+							<ul class="breadcrumb breadcrumb-caret pull-left">
+								<li><a href="#"><i class="icon-home2 position-left"></i></a></li>
+								<li><a href="message.html">Ed-com</a></li>
+								<li class="active">Message</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+
+                <div class="row">
+                    <div class="col-xs-12">
+
+
+						<div class="collapsable-panel-wrapper">
+
+							<div class="pull-left maximize-btn mb-20" style="display:none;">
+								<button type="button" class="btn btn-flat no-padding btn-icon">
+									<i class="icon-arrow-right13"></i>
+								</button>
+							</div>
+
+							<div class="collapsable-panel-left">
+								<div class="panel panel-flat">
+		                            <div class="panel-heading">
+									
+										<div class="row news-type">
+											<div class="col-lg-4 col-md-4 col-xs-4 col-sm-4">
+												<h6 class="panel-title">Message</h6>
+											</div>
+											<div class="col-lg-4 col-md-4 col-xs-4 col-sm-4">
+												<div class="input-group-btn pr-10">
+													<div class="btn-group">
+														<button type="button" class="bg-white btn btn-flat btn-minimal dropdown-toggle btn-xs" data-toggle="dropdown">Add New <span class="caret"></span></button>
+														<ul class="dropdown-menu dropdown-menu-right">
+															<li><a href="#">Chat</a></li>
+															<li><a href="#">Broadcast</a></li>
+															<li><a href="#">Channel</a></li>
+														</ul>
+													</div>
+												</div>
+											</div>
+											<div class="col-lg-4 col-md-4 col-xs-4 col-sm-4 text-right">
+												<ul class="icons-list">
+													
+													<li>
+														<a href="#" class="minimize-btn rotate-180">
+															<i class="icon-arrow-right13"></i>
+														</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+		                            </div>
+
+		                            <div class="panel-body no-padding">
+										<!-- Tabs -->
+										<ul class="nav nav-lg nav-tabs tab-background nav-justified no-margin">
+			                                <li class="active">
+			                                    <a href="#chat-history" class="text-size-small" data-toggle="tab">
+			                                        Messages
+			                                    </a>
+			                                </li>
+
+			                                <li>
+			                                    <a href="#chat-contacts" class="text-size-small" data-toggle="tab">
+			                                        Contacts
+			                                    </a>
+			                                </li>
+			                            </ul>
+			                            <!-- /tabs -->
+
+										<!-- Tabs content -->
+										<div class="tab-content background-content">
+			                                <div class="tab-pane active pt-5 fade in sidebar-default" id="chat-history">
+												<div class="sidebar-category prevent-default contact-type-container">
+													<div class="category-title">
+														<span>Message Type: <span class="selected-message-type">All</span> </span>
+														<ul class="icons-list">
+															<li><a href="#" data-action="collapse"></a></li>
+														</ul>
+													</div>
+
+													<div class="category-content p-t-0 p-b-0">
+														<form action="#">
+															<div class="form-group">
+																<div class="radio">
+																	<label>
+																		<input type="radio" name="message-type" class="styled" checked>
+																		All
+																	</label>
+																</div>
+
+																<div class="radio">
+																	<label>
+																		<input type="radio" name="message-type" class="styled">
+																		Chat
+																	</label>
+																</div>
+
+																<div class="radio">
+																	<label>
+																		<input type="radio" name="message-type" class="styled">
+																		Broadcast
+																	</label>
+																</div>
+																
+																<div class="radio">
+																	<label>
+																		<input type="radio" name="message-type" class="styled">
+																		Channel
+																	</label>
+																</div>
+															</div>
+														</form>
+													</div>
+												</div>
+												<div class="sidebar-category prevent-default contact-type-container">
+													<div class="category-title">
+														<span>HISTORY: <span class="selected-history">All</span> </span>
+														<ul class="icons-list">
+															<li><a href="#" data-action="collapse"></a></li>
+														</ul>
+													</div>
+
+													<div class="category-content p-t-0 p-b-0">
+														<form action="#">
+															<div class="form-group">
+																<div class="radio">
+																	<label>
+																		<input type="radio" name="history" class="styled" checked>
+																		All
+																	</label>
+																</div>
+
+																<div class="radio">
+																	<label>
+																		<input type="radio" name="history" class="styled">
+																		Today
+																	</label>
+																</div>
+
+																<div class="radio">
+																	<label>
+																		<input type="radio" name="history" class="styled">
+																		7 Days history
+																	</label>
+																</div>
+															</div>
+														</form>
+													</div>
+												</div>
+
+												<div class="row">
+													<div class="col-xs-12">
+														<div class="input-group search-group">
+															<input type="search" class="form-control pl-20" placeholder="Search...">
+															<div class="input-group-btn pr-10">
+																<div class="btn-group">
+																	<button type="button" class="btn btn-flat btn-minimal dropdown-toggle btn-xs" data-toggle="dropdown">All <span class="caret"></span></button>
+																	<ul class="dropdown-menu dropdown-menu-right">
+																		<li><a href="#">All</a></li>
+																		<li><a href="#">Topics</a></li>
+																		<li><a href="#">Messages</a></li>
+																	</ul>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="p-20 p-r-0 pt-10">
+													<div class="row">
+														<div class="col-xs-12">
+															<ul class="media-list contact-list">
+																<li class="media">
+
+																	<div class="media-left">
+																		<a href="#"><img data-toggle="popover" data-user-info-show="true" src="../../assets/images/sponsor2.jpg" class="img-circle img-xs no-action" alt=""></a>
+																		
+																	</div>
+
+																	<div class="media-body">
+																		<a href="#" class="contact">
+																			Dwain Smith
+																			<span class="badge bg-orange-400 unread-msg">2</span>
+
+																		</a>
+																		<span class="display-block text-size-mini text-muted" title="Today&#13;Sun 11 Jul 2018, 8:32am">Just now</span>
+																	</div>
+
+																</li>
+
+																<li class="media">
+																	<div class="media-left">
+																		<a href="#"><img data-toggle="popover" data-user-info-show="true" src="../../assets/images/avatar2.jpg" class="img-circle img-xs" alt=""></a>
+
+																	</div>
+
+																	<div class="media-body">
+																		<a href="#" class="contact">
+																			Margo Baker
+																		</a>
+																		<span class="display-block text-size-mini text-muted" title="Today&#13;Sun 11 Jul 2018, 11:00am">3 hrs ago</span>
+																	</div>
+
+																</li>
+
+																<li class="media">
+																	<div class="media-left">
+																		 <a href="#"><img  data-toggle="popover" data-user-info-show="true" src="../../assets/images/staff1.jpg" class="img-circle img-xs" alt=""></a>
+
+																	</div>
+
+																	<div class="media-body">
+																		<a href="#" class="contact">
+																			Jeremy Victorino
+																			<span class="badge bg-orange-400 unread-msg">5</span>
+																		</a>
+																		<span class="display-block text-size-mini text-muted" title="Yesterday&#13;Mon 12 Jul 2018, 6:30am">Yesterday, 6:30am</span>
+																	</div>
+
+																</li>
+
+																<li class="media">
+																	<div class="media-left">
+																		 <a href="#"><img data-toggle="popover" data-user-info-show="true" src="../../assets/images/staff4.jpg" class="img-circle img-xs" alt=""></a>
+
+																	</div>
+
+																	<div class="media-body">
+																		<a href="#" class="contact">
+																			Beatrix Diaz
+																		</a>
+																		<span class="display-block text-size-mini text-muted" title="1 week ago&#13;Mon 5 Mar 2018, 7:35pm">Mar 5, 7:35pm</span>
+																	</div>
+
+																</li>
+
+																<li class="media">
+																	<div class="media-left">
+																		<a href="#"><img data-toggle="popover" data-user-info-show="true" src="../../assets/images/staff2.jpg" class="img-circle img-xs" alt=""></a>
+
+																	</div>
+
+																	<div class="media-body">
+																		<a href="#" class="contact">
+																			Richard Vango
+																		</a>
+
+																		<span class="display-block text-size-mini text-muted" title="1 week ago&#13;Mon 4 Mar 2018, 3:05pm">Mar 4, 3:05pm</span>
+																	</div>
+
+																</li>
+
+																<li class="media">
+																	<div class="media-left">
+																		 <a href="#"><img data-toggle="popover" data-user-info-show="true" src="../../assets/images/staff5.jpg" class="img-circle img-xs" alt=""></a>
+
+																	</div>
+
+																	<div class="media-body">
+																		<a href="#" class="contact">
+																			James Green
+																			<span class="badge bg-orange-400 unread-msg">12</span>
+																		</a>
+																		<span class="display-block text-size-mini text-muted" title="1 month ago&#13;Feb 27 Mar 2018, 10:10am">Feb 27, 10:10am</span>
+																	</div>
+
+																</li>
+																<li class="media">
+																	<div class="media-left">
+																		 <a href="#"><img data-toggle="popover" data-user-info-show="true" src="../../assets/images/staff3.jpg" class="img-circle img-xs" alt=""></a>
+
+																	</div>
+
+																	<div class="media-body">
+																		<a href="#" class="contact">
+																			Isak Temes
+																			<span class="badge bg-orange-400 unread-msg">8</span>
+																		</a>
+																		<span class="display-block text-size-mini text-muted" title="1 month ago&#13;Feb 20 Mar 2018, 10:00am">Feb 20, 10:00am</span>
+																	</div>
+
+																</li>
+																<li class="media">
+																	<div class="media-left">
+																		 <a href="#"><img data-toggle="popover" data-user-info-show="true" src="../../assets/images/avatar12.jpg" class="img-circle img-xs" alt=""></a>
+
+																	</div>
+
+																	<div class="media-body">
+																		<a href="#" class="contact">
+																			Chris Davi
+																			<span class="badge bg-orange-400 unread-msg">10</span>
+																		</a>
+																		<span class="display-block text-size-mini text-muted" title="1 month ago&#13;Feb 10 Mar 2018, 9:00pm">Feb 10, 9:00pm</span>
+																	</div>
+
+																</li>
+															</ul>
+														</div>
+													</div>
+			                                    </div>
+			                                </div>
+
+			                                <div class="tab-pane fade pt-5 sidebar-default" id="chat-contacts">
+
+												<div class="sidebar-category prevent-default contact-type-container">
+													<div class="category-title">
+														<span>CONTACT TYPE: <span class="selected-contact-type">All Individuals</span> </span>
+														<ul class="icons-list">
+															<li><a href="#" data-action="collapse"></a></li>
+														</ul>
+													</div>
+
+													<div class="category-content p-t-0 p-b-0">
+														<form action="#">
+															<div class="form-group">
+																<div class="radio">
+																	<label>
+																		<input id="radio-individuals" type="radio" name="contact-type" class="styled" checked>
+																		All Individuals
+																	</label>
+																</div>
+
+																<div class="radio">
+																	<label>
+																		<input  type="radio" name="contact-type" class="styled">
+																		Recent
+																	</label>
+																</div>
+
+																<div class="radio">
+																	<label>
+																		<input id="radio-groups" type="radio" name="contact-type" class="styled">
+																		All Groups
+																	</label>
+																</div>
+																
+																<div class="radio">
+																	<label>
+																		<input  type="radio" name="contact-type" class="styled">
+																		Recent
+																	</label>
+																</div>
+															</div>
+														</form>
+													</div>
+												</div>
+
+												<div class="sidebar-category prevent-default entities-container">
+													<div class="category-title">
+														<span>ENTITIES: <span class="selected-entities">All</span></span>
+														<ul class="icons-list">
+															<li><a href="#" data-action="collapse"></a></li>
+														</ul>
+													</div>
+
+													<div class="category-content p-t-0 p-b-0">
+														<form action="#">
+															<div class="form-group">
+																<div class="checkbox">
+																	<label>
+																		<input type="checkbox" class="styled" checked="checked">
+																		Student
+																	</label>
+																</div>
+
+																<div class="checkbox">
+																	<label>
+																		<input type="checkbox" class="styled" checked="checked">
+																		Student Relation
+																	</label>
+																</div>
+
+																<div class="checkbox">
+																	<label>
+																		<input type="checkbox" class="styled" checked="checked">
+																		Staff
+																	</label>
+																</div>
+
+																<div class="checkbox">
+																	<label>
+																		<input type="checkbox" class="styled" checked="checked" >
+																		Alumni
+																	</label>
+																</div>
+
+																<div class="checkbox">
+																	<label>
+																		<input type="checkbox" class="styled" checked="checked">
+																		Applicant
+																	</label>
+																</div>
+																<hr class="seperator">
+																<div class="checkbox">
+																	<label>
+																		<input type="checkbox" class="styled" checked="checked">
+																		Library Borrowers
+																	</label>
+																</div>
+																<div class="checkbox">
+																	<label>
+																		<input type="checkbox" class="styled" checked="checked">
+																		External Company Staff
+																	</label>
+																</div>
+																<div class="checkbox">
+																	<label>
+																		<input type="checkbox" class="styled" checked="checked">
+																		External Student
+																	</label>
+																</div>
+																<div class="checkbox">
+																	<label>
+																		<input type="checkbox" class="styled" checked="checked">
+																		General
+																	</label>
+																</div>
+															</div>
+														</form>
+													</div>
+												</div>
+
+
+												<div class="row">
+													<div class="col-xs-12">
+														<div class="form-group search-group">
+															<input type="search" class="form-control pl-20 pr-20" placeholder="Search...">
+														</div>
+													</div>
+												</div>
+
+												<div class="p-20 p-r-0 p-t-0">
+													<div class="row">
+														<div class="col-xs-12">
+															<ul class="media-list contact-list individuals">
+																<li class="media">
+																	<div class="strike">
+																		<span>Individuals (92)</span>
+																	</div>
+																	<div class="media-left">
+																		<a href="#">
+																			<img data-toggle="popover" data-user-info-show="true" src="../../assets/images/staff3.jpg" class="img-circle img-xs" alt="">
+																			<span title="Offline" class="badge status-icon no-padding  media-badge">
+																				<i class="icon-circle text-grey"></i>
+																			</span>
+																		</a>
+																	</div>
+
+																	<div class="media-body single-line">
+																		<a href="#" class="contact">
+																			Isak Temes
+																		</a>
+																	</div>
+																</li>
+
+																<li class="media">
+																	<div class="media-left">
+																		<a href="#">
+																			<img data-toggle="popover" data-user-info-show="true" src="../../assets/images/avatar2.jpg" class="img-circle img-xs" alt="">
+																			<span title="Online" class="badge status-icon no-padding media-badge">
+																				<i class="icon-circle2 text-success-400"></i>
+																			</span>
+																		</a>
+																	</div>
+
+																	<div class="media-body single-line">
+																		<a href="#" class="contact">
+																			Vittorio Cosgrove
+																		</a>
+																	</div>
+																</li>
+
+																<li class="media">
+																	<div class="media-left">
+																		<a href="#">
+																			<img data-toggle="popover" data-user-info-show="true" src="../../assets/images/staff1.jpg" class="img-circle img-xs" alt="">
+																			<span title="Offline" class="badge status-icon no-padding media-badge">
+																				<i class="icon-circle text-grey"></i>
+																			</span>
+																		</a>
+																	</div>
+
+																	<div class="media-body single-line">
+																		<a href="#" class="contact">
+																			Jeremy Victorino
+																		</a>
+																	</div>
+																</li>
+
+																<li class="media">
+																	<div class="media-left">
+																		<a href="#">
+																			<img data-toggle="popover" data-user-info-show="true" src="../../assets/images/staff4.jpg" class="img-circle img-xs" alt="">
+																			<span title="Online" class="badge status-icon no-padding  media-badge">
+																				<i class="icon-circle2 text-success-400"></i>
+																			</span>
+																		</a>
+																	</div>
+
+																	<div class="media-body single-line">
+																		<a href="#" class="contact">
+																			Beatrix Diaz
+																		</a>
+																	</div>
+																</li>
+
+																<li class="media">
+																	<div class="media-left">
+																		<a href="#">
+																			<img data-toggle="popover" data-user-info-show="true" src="../../assets/images/staff2.jpg" class="img-circle img-xs" alt="">
+																			<span title="Online" class="badge status-icon no-padding  media-badge">
+																				<i class="icon-circle2 text-success-400"></i>
+																			</span>
+																		</a>
+																	</div>
+
+																	<div class="media-body single-line">
+																		<a href="#" class="contact">
+																			Richard Vango
+																		</a>
+																	</div>
+																</li>
+
+																<li class="media">
+																	<div class="media-left">
+																		<a href="#">
+																			<img data-toggle="popover" data-user-info-show="true" src="../../assets/images/staff5.jpg" class="img-circle img-xs" alt="">
+																			<span title="Offline" class="badge status-icon no-padding  media-badge">
+																				<i class="icon-circle text-grey"></i>
+																			</span>
+																		</a>
+																	</div>
+
+																	<div class="media-body single-line">
+																		<a href="#" class="contact">
+																			James Green
+																		</a>
+																	</div>
+																</li>
+																<li class="media">
+																	<div class="media-left">
+																		<a href="#">
+																			<img data-toggle="popover" data-user-info-show="true" src="../../assets/images/avatar15-big.jpg" class="img-circle img-xs" alt="">
+																			<span title="Offline" class="badge status-icon no-padding  media-badge">
+																				<i class="icon-circle text-grey"></i>
+																			</span>
+																		</a>
+																	</div>
+
+																	<div class="media-body single-line">
+																		<a href="#" class="contact">
+																			Julia Hazard
+																		</a>
+																	</div>
+																</li>
+															</ul>
+
+															<ul class="media-list person-list mt-10">
+																<li class="media">
+																	<div class="strike">
+																		<span>Groups (2)</span>
+																	</div>
+																	<div class="media-left">
+																		<a href="#">
+																			<img src="../../assets/images/placeholder.jpg" class="img-circle img-xs" alt="">
+																		</a>
+																	</div>
+
+																	<div class="media-body single-line">
+																		<a href="#" class="groups">
+																			My Mutual Friends
+																		</a>
+																	</div>
+																</li>
+
+																<li class="media">
+																	<div class="media-left">
+																		<a href="#">
+																			<img src="../../assets/images/placeholder.jpg" class="img-circle img-xs" alt="">
+																		</a>
+																	</div>
+
+																	<div class="media-body single-line">
+																		<a href="#" class="groups">
+																			Grade 10 Students
+																		</a>
+																	</div>
+																</li>
+
+															</ul>
+														</div>
+													</div>
+												</div>
+			                                </div>
+
+
+
+			                            </div>
+			                            <!-- /tabs content -->
+		                            </div>
+
+		                        </div>
+							</div>
+
+
+							<div class="collapsable-panel-right">
+								<div id="chats-tab">
+
+									<div class="history-emtpy-message nothing-selected-box text-center" style="display:none;">
+										Select a chat history to view...
+									</div>
+
+									<div class="contacts-emtpy-message nothing-selected-box text-center" style="display:none;">
+										Click on a contact to start a new chat...
+									</div>
+
+
+		                            <div class="tabbable tab-content-bordered content-group-lg right-panel responsive-tab">
+		                                <ul class="nav nav-tabs nav-lg nav-tabs-highlight">
+		                                    <li class="active">
+		                                        <a href="#dwain" data-toggle="tab">
+		                                            <img src="../../assets/images/sponsor2.jpg" alt="" class="img-circle tab-img position-left">Dwain
+													<span title="Online" class="badge status-icon no-padding media-badge">
+		                                                <i class="icon-circle2 text-success-400"></i>
+		                                            </span>
+													<button type="button" class="close ml-10 text-size-xxlarge pull-right" onclick="closeChat(this);">×</button>
+													<span class="badge pull-right bg-orange ml-5 unread-msg">2</span>
+		                                        </a>
+		                                    </li>
+
+		                                    <li>
+		                                        <a href="#margo" data-toggle="tab">
+		                                            <img src="../../assets/images/avatar2.jpg" alt="" class="img-circle tab-img position-left">Margo
+													<span title="Online" class="badge status-icon no-padding media-badge">
+		                                                <i class="icon-circle2 text-success-400"></i>
+		                                            </span>
+													<button type="button" class="close ml-10 text-size-xxlarge pull-right" onclick="closeChat(this);">×</button>
+		                                        </a>
+		                                    </li>
+
+		                                    <li>
+		                                        <a href="#jeremy" data-toggle="tab">
+		                                            <img src="../../assets/images/staff1.jpg" alt="" class="img-circle tab-img position-left">Jeremy
+													<span title="Offline" class="badge status-icon no-padding media-badge">
+		                                                <i class="icon-circle text-grey"></i>
+		                                            </span>
+													<button type="button" class="close ml-10 text-size-xxlarge pull-right" onclick="closeChat(this);">×</button>
+		                                        </a>
+		                                    </li>
+
+		                                    <li>
+		                                        <a href="#beatrix" data-toggle="tab">
+		                                            <img src="../../assets/images/staff4.jpg" alt="" class="img-circle tab-img position-left">Beatrix
+													<span title="Offline" class="badge status-icon no-padding  media-badge">
+		                                                <i class="icon-circle text-grey"></i>
+		                                            </span>
+													<button type="button" class="close ml-10 text-size-xxlarge pull-right" onclick="closeChat(this);">×</button>
+													<span class="badge pull-right bg-orange ml-5 unread-msg">5</span>
+		                                        </a>
+		                                    </li>
+
+											<li class="dropdown">
+												<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
+												<ul class="dropdown-menu dropdown-menu-right collapsed-menu">
+												</ul>
+											</li>
+
+		                                </ul>
+
+
+		                                <div class="tab-content">
+		                                    <div class="tab-pane fade in active has-padding" id="dwain">
+												<div class="row mb-20 text-right">
+													<div class="col-xs-12">
+														
+													
+														<a href="#" class="dropdown-toggle action-link" data-toggle="dropdown"><i class="icon-transmission"></i>
+															<span class="visible-xs-inline-block position-right">Dropdown</span>
+															<span class="caret"></span>
+														</a>
+														<ul class="dropdown-menu dropdown-menu-right chat-dropdown">
+															<li><input type="text" class="p-5 bss-input input-xs form-control start_chat" onKeyDown="event.stopPropagation();" onClick="event.stopPropagation()"  placeholder="Start new chat..."></li>
+															<li class="active"><a href="#">Assignment 1</a></li>
+															<li><a href="#">Assignment 2</a></li>
+															<li><a href="#">Assignment 3</a></li>
+														</ul>
+														
+														<a href="#" class="action-link" data-toggle="modal" data-target="#modal-invite-participant" title="Message Settings"><i class="icon-cog3"></i></a>
+													</div>
+													
+		                                        </div>
+
+		                                        <ul class="media-list chat-list content-group">
+													<li class="media date-step content-divider message-date">
+		                                                <span>28 Jun</span>
+		                                            </li>
+		                                            <li class="media my-message">
+		                                                <div class="media-left">
+		                                                    <a href="#">
+		                                                        <img src="../../assets/images/staff2.jpg" class="img-circle" alt="Richard Vango" data-toggle="popover" data-user-info-show="true" />
+		                                                    </a>
+		                                                </div>
+
+		                                                <div class="media-body">
+		                                                    <div class="media-content">CrudSS reran and while much withdrew ardent much crab hugely met dizzily that more jeez gent equivalent unsafely far one hesitant so therefore.</div>
+		                                                </div>
+
+														<div class="media-extra">
+															<span class="text-muted text-size-mini" title="3 weeks ago&#13;Wed 28 Jun 2018, 8:01am">
+																	8:01am
+																</span>
+															</span>
+														</div>
+		                                            </li>
+
+		                                            <li class="media">
+		                                                <div class="media-left">
+		                                                    <a href="#">
+		                                                        <img src="../../assets/images/sponsor2.jpg" class="img-circle"  alt="Dwain Smith"  title="Dwain Smith" data-toggle="popover" data-user-info-show="true" />
+		                                                    </a>
+		                                                </div>
+
+														<div class="media-body">
+		                                                    <div class="media-content"><a href="../../assets/images/gallery_image_4.png" target="_blank"><img src="../../assets/images/message-image-1.jpg" alt="ec1-class-1.jpg" title="ec1-class-1.jpg" class="inline-image" /></a>
+															<a href="../../assets/images/gallery_image_3.png" target="_blank"><img src="../../assets/images/message-image-2.jpg" alt="ec1-class-2.jpg" title="ec1-class-2.jpg" class="inline-image" /></a><br />
+															
+															Far squid and that hello fidgeted and when. As this oh darn but slapped casually husky sheared that cardinal hugely one and some unnecessary factiously hedgehog a feeling one rudely much</div>
+		                                                </div>
+
+														<div class="media-extra">
+															<span class="text-muted text-size-mini" title="3 weeks ago&#13;Wed 28 Jun 2018, 8:21pm">
+																8:21pm
+															</span>
+														</div>
+		                                            </li>
+
+		                                            <li class="media my-message">
+		                                                <div class="media-left">
+		                                                    <a href="#">
+		                                                        <img src="../../assets/images/staff2.jpg" class="img-circle" alt="Richard Vango" title="Richard Vango" data-toggle="popover" data-user-info-show="true" />
+		                                                    </a>
+		                                                </div>
+
+		                                                <div class="media-body">
+		                                                    <div class="media-content">
+																<a href="#" title="Play"><img src="../../assets/images/icon-play.png" />  Voice Message</a>
+															</div>
+		                                                </div>
+
+														<div class="media-extra">
+															<span class="text-muted text-size-mini" title="3 weeks ago&#13;Wed 28 Jun 2018, 8:21pm">
+																8:21pm
+															</span>
+														</div>
+		                                            </li>
+													
+													<li class="media date-step content-divider message-date">
+		                                                <span>5 Jul</span>
+		                                            </li>
+		                                            <li class="media my-message">
+		                                                <div class="media-left">
+		                                                    <a href="#">
+		                                                        <img src="../../assets/images/staff2.jpg" class="img-circle" alt="Richard Vango" title="Richard Vango" data-toggle="popover" data-user-info-show="true" />
+		                                                    </a>
+		                                                </div>
+
+		                                                <div class="media-body">
+		                                                    <div class="media-content">CrudSS reran and while much withdrew ardent much crab hugely met dizzily that more jeez gent equivalent unsafely far one hesitant so therefore.</div>
+		                                                </div>
+
+														<div class="media-extra">
+															<span class="text-muted text-size-mini" title="2 weeks ago&#13;Wed 5 Jul 2018, 8:01am">
+																	8:01am
+																</span>
+															</span>
+														</div>
+		                                            </li>
+
+		                                            <li class="media">
+		                                                <div class="media-left">
+		                                                    <a href="#">
+		                                                        <img src="../../assets/images/sponsor2.jpg" class="img-circle"  alt="Dwain Smith"  title="Dwain Smith" data-toggle="popover" data-user-info-show="true" />
+		                                                    </a>
+		                                                </div>
+
+														<div class="media-body">
+		                                                    <div class="media-content">Far squid and that hello fidgeted and when. As this oh darn but slapped casually husky sheared that cardinal hugely one and some unnecessary factiously hedgehog a feeling one rudely much</div>
+		                                                </div>
+
+														<div class="media-extra">
+															<span class="text-muted text-size-mini" title="2 weeks ago&#13;Wed 5 Jul 2018, 8:21pm">
+																8:21pm
+															</span>
+														</div>
+		                                            </li>
+
+		                                            <li class="media my-message">
+		                                                <div class="media-left">
+		                                                    <a href="#">
+		                                                        <img src="../../assets/images/staff2.jpg" class="img-circle" alt="Richard Vango" title="Richard Vango" data-toggle="popover" data-user-info-show="true" />
+		                                                    </a>
+		                                                </div>
+
+		                                                <div class="media-body">
+		                                                    <div class="media-content">Tolerantly some understood this stubbornly after snarlingly frog far added insect into snorted more auspiciously heedless drunkenly jeez foolhardy oh.</div>
+		                                                </div>
+
+														<div class="media-extra">
+															<span class="text-muted text-size-mini" title="2 weeks ago&#13;Wed 5 Jul 2018, 8:21pm">
+																8:21pm
+															</span>
+														</div>
+		                                            </li>
+
+		                                            <li class="media date-step content-divider">
+		                                                <span>Today</span>
+		                                            </li>
+
+		                                            <li class="media">
+
+		                                                <div class="media-left">
+		                                                    <a href="#">
+		                                                        <img src="../../assets/images/sponsor2.jpg" class="img-circle" alt="Dwain Smith"  title="Dwain Smith" data-toggle="popover" data-user-info-show="true" />
+		                                                    </a>
+		                                                </div>
+
+														<div class="media-body">
+		                                                    <div class="media-content">Satisfactorily strenuously while sleazily dear frustratingly insect menially some shook far sardonic badger telepathic much jeepers immature much hey.</div>
+		                                                </div>
+
+														<div class="media-extra">
+															<span class="text-muted text-size-mini" title="Today&#13;Tue 19 Jul 2018, 9:11am">
+																9:11am
+															</span>
+														</div>
+		                                            </li>
+													<li class="media">
+
+		                                                <div class="media-left">
+		                                                    <a href="#">
+		                                                        <img src="../../assets/images/sponsor2.jpg" class="img-circle" alt="Dwain Smith"  title="Dwain Smith" data-toggle="popover" data-user-info-show="true" />
+		                                                    </a>
+		                                                </div>
+														
+														<div class="media-body">
+		                                                    <div class="media-content">
+																<a href="#" title="Play"><img src="../../assets/images/icon-play.png" />  Voice Message</a>
+															</div>
+		                                                </div>
+
+														<div class="media-extra">
+															<span class="text-muted text-size-mini" title="Today&#13;Tue 19 Jul 2018, 9:11am">
+																9:11am
+															</span>
+														</div>
+		                                            </li>
+
+		                                            <li class="media my-message">
+		                                                <div class="media-left">
+		                                                    <a href="#">
+		                                                        <img src="../../assets/images/staff2.jpg" class="img-circle" alt="Richard Vango" title="Richard Vango" data-toggle="popover" data-user-info-show="true" />
+		                                                    </a>
+		                                                </div>
+
+		                                                <div class="media-body">
+		                                                    <div class="media-content">Grunted smirked and grew less but rewound much despite and impressive via alongside out and gosh easy manatee dear ineffective yikes.
+															
+															
+																<div class="attachments-container">
+																	<ul class="attached-area">
+																		<li>
+																			<span class="attached-preview">
+																				<i class="icon-file-picture"></i>
+																			</span>
+																			<div class="attached-content">
+																				<a title="image_053.png
+Uploaded on 13 July 2017 13:30
+By: John Smith
+Size: 128 K" class="file-name" href="#">image_053.png</a>
+																			</div>
+																		</li>
+																		<li>
+																			<span class="attached-preview">
+																				<i class="icon-file-pdf"></i>
+																			</span>
+																			<div class="attached-content">
+																				<a title="subject_letter.pdf
+Uploaded on 10 July 2017 10:20 
+By: John Smith
+Size: 20 K" class="file-name" href="#">subject_letter.pdf</a>
+																			</div>
+																		</li>
+																	</ul>
+																</div>
+
+															
+															</div>
+		                                                </div>
+
+														<div class="media-extra">
+															<span class="text-muted text-size-mini" title="Today&#13;Tue 19 Jul 2018, 1:18pm">
+																3 hrs ago
+															</span>
+														</div>
+		                                            </li>
+
+		                                            <li class="media">
+		                                                <div class="media-left">
+		                                                    <a href="#">
+		                                                        <img src="../../assets/images/sponsor2.jpg" class="img-circle" alt="Dwain Smith"  title="Dwain Smith" data-toggle="popover" data-user-info-show="true" />
+		                                                    </a>
+		                                                </div>
+
+														<div class="media-body">
+		                                                    <div class="media-content"><i class="icon-menu display-block"></i></div>
+		                                                </div>
+		                                            </li>
+		                                        </ul>
+
+												<div class="type-area">
+													<div class="add-comment">
+														<div class="form-group form-group-material">
+															
+															<input type="text" class="form-control" placeholder="Type here..." value="">
+														</div> 
+														<div class="row">
+															<div class="col-xs-6">
+																<ul class="icons-list icons-list-extended">
+																	<li><div class="component-attachment-button-w-eddrive"></div></li>
+																</ul>
+															</div>
+
+															<div class="col-xs-6 text-right">
+																<button type="button" class="btn bg-teal-400 btn-labeled btn-labeled-right legitRipple"><b><i class="icon-circle-right2"></i></b> Send</button>
+															</div>
+														</div>
+													</div>
+												</div>
+		                                    </div>
+
+		                                    <div class="tab-pane fade has-padding" id="margo">
+												<div class="row mb-20 text-right">
+													<div class="col-xs-12">
+														<a href="#" class="action-link" data-toggle="modal" data-target="#modal-invite-participant" title="Message Settings"><i class="icon-cog3"></i></a>
+													</div>
+		                                        </div>
+
+		                                        <ul class="media-list chat-list content-group">
+		                                            <li class="media my-message">
+		                                                <div class="media-left">
+		                                                    <a href="#">
+		                                                        <img src="../../assets/images/staff2.jpg" class="img-circle" alt="">
+		                                                    </a>
+		                                                </div>
+
+		                                                <div class="media-body">
+		                                                    <div class="media-content">Crud reran and while much withdrew ardent much crab hugely met dizzily that more jeez gent equivalent unsafely far one hesitant so therefore.</div>
+		                                                </div>
+														<div class="media-extra">
+															<span class="text-muted text-size-mini" title="2 weeks ago&#13;Wed 24 Jun 2018, 8:01am">
+																Jun 24, 8:01am
+															</span>
+														</div>
+		                                            </li>
+
+		                                            <li class="media">
+
+		                                                <div class="media-left">
+		                                                    <a href="#">
+		                                                        <img src="../../assets/images/avatar2.jpg" class="img-circle" alt="">
+		                                                    </a>
+		                                                </div>
+
+														<div class="media-body">
+		                                                    <div class="media-content">Far squid and that hello fidgeted and when. As this oh darn but slapped casually husky sheared that cardinal hugely one and some unnecessary factiously hedgehog a feeling one rudely much</div>
+		                                                </div>
+
+														<div class="media-extra">
+															<span class="text-muted text-size-mini" title="1 week ago&#13;Mon 6 Jul 2018, 8:21pm">
+																Jul 6, 8:21pm
+															</span>
+														</div>
+		                                            </li>
+
+		                                            <li class="media my-message">
+		                                                <div class="media-left">
+		                                                    <a href="#">
+		                                                        <img src="../../assets/images/staff2.jpg" class="img-circle" alt="">
+		                                                    </a>
+		                                                </div>
+
+		                                                <div class="media-body">
+		                                                    <div class="media-content">Tolerantly some understood this stubbornly after snarlingly frog far added insect into snorted more auspiciously heedless drunkenly jeez foolhardy oh.</div>
+		                                                </div>
+
+														<div class="media-extra">
+															<span class="text-muted text-size-mini" title="2 days ago&#13;Tue 9 Jul 2018, 9:11am">
+																Jul 9, 9:11am
+															</span>
+														</div>
+		                                            </li>
+
+		                                            <li class="media date-step content-divider">
+		                                                <span>New messages</span>
+		                                            </li>
+
+		                                            <li class="media">
+		                                                <div class="media-left">
+		                                                    <a href="#">
+		                                                        <img src="../../assets/images/avatar2.jpg" class="img-circle" alt="">
+		                                                    </a>
+		                                                </div>
+
+														<div class="media-body">
+		                                                    <div class="media-content">Satisfactorily strenuously while sleazily dear frustratingly insect menially some shook far sardonic badger telepathic much jeepers immature much hey.</div>
+		                                                </div>
+
+														<div class="media-extra">
+															<span class="text-muted text-size-mini" title="Today&#13;Thu 1 Mar 2018, 1:18pm">
+																3 hrs ago
+															</span>
+														</div>
+		                                            </li>
+
+
+		                                            <li class="media">
+		                                                <div class="media-left">
+		                                                    <a href="#">
+		                                                        <img src="../../assets/images/avatar2.jpg" class="img-circle" alt="">
+		                                                    </a>
+		                                                </div>
+
+														<div class="media-body">
+		                                                    <div class="media-content"><i class="icon-menu display-block"></i></div>
+		                                                </div>
+		                                            </li>
+		                                        </ul>
+
+												<div class="pt-20 pb-20">
+													<div class="add-comment pt-20">
+
+														<textarea class="content-group mt-10" rows="3" cols="1" placeholder="Type here..."></textarea>
+
+														<div class="row">
+															<div class="col-xs-6">
+																<ul class="icons-list icons-list-extended">
+																	<li><div class="component-attachment-button-w-eddrive"></div></li>
+																</ul>
+															</div>
+
+															<div class="col-xs-6 text-right">
+																<button type="button" class="btn bg-teal-400 btn-labeled btn-labeled-right legitRipple"><b><i class="icon-circle-right2"></i></b> Send</button>
+															</div>
+														</div>
+													</div>
+												</div>
+
+		                                    </div>
+
+		                                    <div class="tab-pane fade has-padding" id="jeremy">
+												<div class="row mb-20 text-right">
+													<div class="col-xs-12">
+														<a href="#" class="action-link" data-toggle="modal" data-target="#modal-invite-participant" title="Message Settings"><i class="icon-cog3"></i></a>
+													</div>
+		                                        </div>
+
+		                                        <ul class="media-list chat-list content-group">
+		                                            <li class="media">
+		                                                <div class="media-left">
+		                                                    <a href="#">
+		                                                        <img src="../../assets/images/staff2.jpg" class="img-circle" alt="">
+		                                                    </a>
+		                                                </div>
+
+		                                                <div class="media-body">
+		                                                    <div class="media-content">Crud reran and while much withdrew ardent much crab hugely met dizzily that more jeez gent equivalent unsafely far one hesitant so therefore.</div>
+		                                                </div>
+														<div class="media-extra">
+															<span class="text-muted text-size-mini" title="2 days ago&#13;Mon 6 Jul 2018, 10:18pm">
+																Jul 6, 10:18pm
+															</span>
+														</div>
+		                                            </li>
+
+		                                            <li class="media">
+		                                                <div class="media-left">
+		                                                    <a href="#">
+		                                                        <img src="../../assets/images/staff1.jpg" class="img-circle" alt="">
+		                                                    </a>
+		                                                </div>
+
+														<div class="media-body">
+		                                                    <div class="media-content">Far squid and that hello fidgeted and when. As this oh darn but slapped casually husky sheared that cardinal hugely one and some unnecessary factiously hedgehog a feeling one rudely much</div>
+		                                                </div>
+
+														<div class="media-extra">
+															<span class="text-muted text-size-mini" title="2 days ago&#13;Mon 6 Jul 2018, 11:48pm">
+																Jul 6, 11:48pm
+															</span>
+														</div>
+		                                            </li>
+
+		                                            <li class="media">
+		                                                <div class="media-left">
+		                                                    <a href="#">
+		                                                        <img src="../../assets/images/staff2.jpg" class="img-circle" alt="">
+		                                                    </a>
+		                                                </div>
+
+		                                                <div class="media-body">
+		                                                    <div class="media-content">Tolerantly some understood this stubbornly after snarlingly frog far added insect into snorted more auspiciously heedless drunkenly jeez foolhardy oh.</div>
+		                                                </div>
+
+														<div class="media-extra">
+															<span class="text-muted text-size-mini" title="Yesterday&#13;Wed 8 Jul 2018, 10:08am">
+																Yesterday, 10:08am
+															</span>
+														</div>
+		                                            </li>
+
+		                                            <li class="media date-step content-divider">
+		                                                <span>New messages</span>
+		                                            </li>
+
+		                                            <li class="media">
+		                                                <div class="media-left">
+		                                                    <a href="#">
+		                                                        <img src="../../assets/images/staff1.jpg" class="img-circle" alt="">
+		                                                    </a>
+		                                                </div>
+
+														<div class="media-body">
+		                                                    <div class="media-content">Satisfactorily strenuously while sleazily dear frustratingly insect menially some shook far sardonic badger telepathic much jeepers immature much hey.</div>
+		                                                </div>
+
+														<div class="media-extra">
+															<span class="text-muted text-size-mini" title="Today&#13;Thu 9 Jul 2018, 11:25am">
+																1 hr ago
+															</span>
+														</div>
+		                                            </li>
+
+		                                            <li class="media">
+		                                                <div class="media-left">
+		                                                    <a href="#">
+		                                                        <img src="../../assets/images/staff2.jpg" class="img-circle" alt="">
+		                                                    </a>
+		                                                </div>
+
+		                                                <div class="media-body">
+		                                                    <div class="media-content">Grunted smirked and grew less but rewound much despite and impressive via alongside out and gosh easy manatee dear ineffective yikes.</div>
+		                                                </div>
+
+														<div class="media-extra">
+															<span class="text-muted text-size-mini" title="Today&#13;Thu 9 Jul 2018, 12:44am">
+																26 mins ago<br>
+															</span>
+														</div>
+		                                            </li>
+
+		                                            <li class="media">
+		                                                <div class="media-left">
+		                                                    <a href="#">
+		                                                        <img src="../../assets/images/staff1.jpg" class="img-circle" alt="">
+		                                                    </a>
+		                                                </div>
+
+														<div class="media-body">
+		                                                    <div class="media-content"><i class="icon-menu display-block"></i></div>
+		                                                </div>
+		                                            </li>
+		                                        </ul>
+
+												<div class="pt-20 pb-20">
+													<div class="add-comment pt-20">
+
+														<textarea class="content-group mt-10" rows="3" cols="1" placeholder="Type here..."></textarea>
+
+														<div class="row">
+															<div class="col-xs-6">
+																<ul class="icons-list icons-list-extended">
+																	<li><div class="component-attachment-button-w-eddrive"></div></li>
+																</ul>
+															</div>
+
+															<div class="col-xs-6 text-right">
+																<button type="button" class="btn bg-teal-400 btn-labeled btn-labeled-right legitRipple"><b><i class="icon-circle-right2"></i></b> Send</button>
+															</div>
+														</div>
+													</div>
+												</div>
+
+		                                    </div>
+
+		                                    <div class="tab-pane fade has-padding" id="beatrix">
+												<div class="row mb-20 text-right">
+													<div class="col-xs-12">
+														<a href="#" class="action-link" data-toggle="modal" data-target="#modal-invite-participant" title="Message Settings"><i class="icon-cog3"></i></a>
+													</div>
+		                                        </div>
+
+		                                        <ul class="media-list chat-list content-group">
+		                                            <li class="media">
+		                                                <div class="media-left">
+		                                                    <a href="#">
+		                                                        <img src="../../assets/images/staff2.jpg" class="img-circle" alt="">
+		                                                    </a>
+		                                                </div>
+
+		                                                <div class="media-body">
+		                                                    <div class="media-content">Crud reran and while much withdrew ardent much crab hugely met dizzily that more jeez gent equivalent unsafely far one hesitant so therefore.</div>
+		                                                </div>
+
+														<div class="media-extra">
+															<span class="text-muted text-size-mini" title="1 week ago&#13;Mon 28 Jun 2018, 12:44am">
+																Jun 28, 12:44am
+															</span>
+														</div>
+		                                            </li>
+
+		                                            <li class="media">
+		                                                <div class="media-left">
+		                                                    <a href="#">
+		                                                        <img src="../../assets/images/staff4.jpg" class="img-circle" alt="">
+		                                                    </a>
+		                                                </div>
+
+														<div class="media-body">
+		                                                    <div class="media-content">Far squid and that hello fidgeted and when. As this oh darn but slapped casually husky sheared that cardinal hugely one and some unnecessary factiously hedgehog a feeling one rudely much</div>
+		                                                </div>
+
+														<div class="media-extra">
+															<span class="text-muted text-size-mini" title="3 days ago&#13;Fri 3 Jul 2018, 10:15pm">
+																Jul 3, 10:15pm
+															</span>
+														</div>
+		                                            </li>
+
+		                                            <li class="media">
+		                                                <div class="media-left">
+		                                                    <a href="#">
+		                                                        <img src="../../assets/images/staff2.jpg" class="img-circle" alt="">
+		                                                    </a>
+		                                                </div>
+
+		                                                <div class="media-body">
+		                                                    <div class="media-content">Tolerantly some understood this stubbornly after snarlingly frog far added insect into snorted more auspiciously heedless drunkenly jeez foolhardy oh.</div>
+
+		                                                </div>
+
+														<div class="media-extra">
+															<span class="text-muted text-size-mini" title="Yesterday&#13;Sun 5 Jul 2018, 10:05am">
+																Yesterday, 10:05am
+															</span>
+														</div>
+
+		                                            </li>
+
+		                                            <li class="media date-step content-divider">
+		                                                <span>New messages</span>
+		                                            </li>
+
+		                                            <li class="media">
+		                                                <div class="media-left">
+		                                                    <a href="#">
+		                                                        <img src="../../assets/images/staff4.jpg" class="img-circle" alt="">
+		                                                    </a>
+		                                                </div>
+
+														<div class="media-body">
+		                                                    <div class="media-content">Satisfactorily strenuously while sleazily dear frustratingly insect menially some shook far sardonic badger telepathic much jeepers immature much hey.</div>
+		                                                </div>
+
+														<div class="media-extra">
+															<span class="text-muted text-size-mini" title="Today&#13;Wed 10 Jul 2018, 3:35pm">
+																8 hrs ago
+															</span>
+														</div>
+		                                            </li>
+
+		                                            <li class="media">
+		                                                <div class="media-left">
+		                                                    <a href="#">
+		                                                        <img src="../../assets/images/staff2.jpg" class="img-circle" alt="">
+		                                                    </a>
+		                                                </div>
+
+		                                                <div class="media-body">
+		                                                    <div class="media-content">Grunted smirked and grew less but rewound much despite and impressive via alongside out and gosh easy manatee dear ineffective yikes.</div>
+		                                                </div>
+
+														<div class="media-extra">
+															<span class="text-muted text-size-mini" title="Today&#13, Wed 10 Jul 2018, 8:56pm">
+																1 hr ago
+															</span>
+														</div>
+		                                            </li>
+
+		                                            <li class="media">
+		                                                <div class="media-left">
+		                                                    <a href="#">
+		                                                        <img src="../../assets/images/staff4.jpg" class="img-circle" alt="">
+		                                                    </a>
+		                                                </div>
+														<div class="media-body">
+		                                                    <div class="media-content"><i class="icon-menu display-block"></i></div>
+		                                                </div>
+		                                            </li>
+		                                        </ul>
+
+												<div class="pt-20 pb-20">
+													<div class="add-comment pt-20">
+
+														<textarea class="content-group mt-10" rows="3" cols="1" placeholder="Type here..."></textarea>
+
+														<div class="row">
+															<div class="col-xs-6">
+																<ul class="icons-list icons-list-extended">
+																	<li><div class="component-attachment-button-w-eddrive"></div></li>
+																</ul>
+															</div>
+
+															<div class="col-xs-6 text-right">
+																<button type="button" class="btn bg-teal-400 btn-labeled btn-labeled-right legitRipple"><b><i class="icon-circle-right2"></i></b> Send</button>
+															</div>
+														</div>
+													</div>
+												</div>
+
+
+		                                    </div>
+		                                </div>
+		                            </div>
+		                        </div>
+							</div>
+
+
+						</div>
+                    </div>
+                </div>
+
+		</div>
+		<!-- /Main/ content -->
+
+	</div>
+
+</div>
+<!-- /page container -->
+
+<div class="component-footer"></div>
+<div class="component-attachment-modal"></div>
+<div class="component-user-info"></div>
+<div class="component-conversation-modal"></div>
+
+<div id="modal-invite-participant" class="modal fade in">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h5 class="modal-title">Message Settings</h5>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-lg-6 col-md-6 col-sm-12">
+						<div class="form-group form-group-material">
+							<label class="control-label"> Topic<span class="text-danger"> *</span></label>
+							<input type="text" class="form-control" placeholder="Topic *" value="Margo Baker" />
+						</div>
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-12">
+						<div class="form-group form-group-material">
+							<label class="control-label">Message Type<span class="text-danger"> *</span></label>
+							<select class="selectpicker form-control" placeholder="Message Type *">
+								<option value="" class="select-title">Message Type *</option>
+								<option value="1" selected>Chat</option>
+								<option value="2">Broadcast</option>
+								<option value="3">Channel</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="strike mt-20">
+					<span>Invite Other Participants</span>
+				</div>
+				<div class="row bg-section no-margin-top search-component">
+					<div class="col-xs-12">
+						<div class="form-group form-group-material person-search custom-tag-field">
+							<label class="control-label">Add New Participant</label>
+							<input type="text" class="typeahead-person form-control" placeholder="Add New Participant" />
+						</div>
+					</div>
+					<div class="col-xs-12">
+						<div class="search-for-container">
+							<ul class="search-for-area person-list edit-enabled">
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="strike mt-20">
+					<span>Participants</span>
+				</div>
+				<div class="navbar navbar-default navbar-xs navbar-component">
+					<div class="navbar-collapse collapse" id="navbar-filter">
+						<ul class="nav navbar-nav">
+							<li>
+								<input type="text" class="form-control" placeholder="Search ...">
+							</li>
+						</ul>	
+						
+					</div>
+				</div>
+				<div class="row">
+					<div class="scrolled-list user-cards">
+						<div class="col-md-6">
+							<div class="panel panel-body">
+								<div class="media">
+									<div class="media-left">
+										<a href="#">
+											<img src="../../assets/images/staff2.jpg" class="img-circle img-lg" alt="">
+										</a>
+									</div>
+
+									<div class="media-body">
+										<h6 class="media-heading">Richard Smith</h6>
+										<span class="text-muted">You</span>
+									</div>
+
+									<div class="media-right media-middle">
+										<ul class="icons-list">
+					                    	<li class="dropdown">
+						                    	<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-more"></i></a>
+						                    	<ul class="dropdown-menu dropdown-menu-right">
+													<li><a href="#"><i class="icon-exit3 pull-right"></i> Leave</a></li>
+												</ul>
+					                    	</li>
+				                    	</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-6">
+							<div class="panel panel-body">
+								<div class="media">
+									<div class="media-left">
+										<a href="#">
+											<img src="../../assets/images/staff1.jpg" class="img-circle img-lg" alt="">
+										</a>
+									</div>
+
+									<div class="media-body">
+										<h6 class="media-heading">Jeremy Victorino</h6>
+										<span class="text-muted">Individual Contact</span>
+									</div>
+
+									<div class="media-right media-middle">
+										<ul class="icons-list">
+					                    	<li class="dropdown">
+						                    	<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-more"></i></a>
+						                    	<ul class="dropdown-menu dropdown-menu-right">
+													<li><a href="#"><i class="icon-trash pull-right"></i> Remove</a></li>
+												</ul>
+					                    	</li>
+				                    	</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-6">
+							<div class="panel panel-body">
+								<div class="media">
+									<div class="media-left">
+										<a href="#">
+											<img src="../../assets/images/teacher4.jpg" class="img-circle img-lg" alt="">
+										</a>
+									</div>
+
+									<div class="media-body">
+										<h6 class="media-heading">Sigfrid Thisted</h6>
+										<span class="text-muted">Orange Group</span>
+									</div>
+
+									<div class="media-right media-middle">
+										<ul class="icons-list">
+					                    	<li class="dropdown">
+						                    	<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-more"></i></a>
+						                    	<ul class="dropdown-menu dropdown-menu-right">
+													<li><a href="#"><i class="icon-trash pull-right"></i> Remove</a></li>
+												</ul>
+					                    	</li>
+				                    	</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-6">
+							<div class="panel panel-body">
+								<div class="media">
+									<div class="media-left">
+										<a href="#">
+											<img src="../../assets/images/staff4.jpg" class="img-circle img-lg" alt="">
+										</a>
+									</div>
+
+									<div class="media-body">
+										<h6 class="media-heading">Beatrix Diaz</h6>
+										<span class="text-muted">Individual Contact</span>
+									</div>
+
+									<div class="media-right media-middle">
+										<ul class="icons-list">
+					                    	<li class="dropdown">
+						                    	<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-more"></i></a>
+						                    	<ul class="dropdown-menu dropdown-menu-right">
+													<li><a href="#"><i class="icon-trash pull-right"></i> Remove</a></li>
+												</ul>
+					                    	</li>
+				                    	</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-6">
+							<div class="panel panel-body">
+								<div class="media">
+									<div class="media-left">
+										<a href="#">
+											<img src="../../assets/images/avatar12.jpg" class="img-circle img-lg" alt="">
+										</a>
+									</div>
+
+									<div class="media-body">
+										<h6 class="media-heading">Owen Stretch</h6>
+										<span class="text-muted">Individual Contact</span>
+									</div>
+
+									<div class="media-right media-middle">
+										<ul class="icons-list">
+					                    	<li class="dropdown">
+						                    	<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-more"></i></a>
+						                    	<ul class="dropdown-menu dropdown-menu-right">
+													<li><a href="#"><i class="icon-trash pull-right"></i> Remove</a></li>
+												</ul>
+					                    	</li>
+				                    	</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-6">
+							<div class="panel panel-body">
+								<div class="media">
+									<div class="media-left">
+										<a href="#">
+											<img src="../../assets/images/staff3.jpg" class="img-circle img-lg" alt="">
+										</a>
+									</div>
+
+									<div class="media-body">
+										<h6 class="media-heading">Isak Temes</h6>
+										<span class="text-muted">Orange Group</span>
+									</div>
+
+									<div class="media-right media-middle">
+										<ul class="icons-list">
+					                    	<li class="dropdown">
+						                    	<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-more"></i></a>
+						                    	<ul class="dropdown-menu dropdown-menu-right">
+													<li><a href="#"><i class="icon-trash pull-right"></i> Remove</a></li>
+												</ul>
+					                    	</li>
+				                    	</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="text-center mt-20">
+					<ul class="pagination pagination-flat pagination-xs">
+						<li><a href="#">&lsaquo;</a></li>
+						<li class="active"><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">5</a></li>
+						<li><a href="#">&rsaquo;</a></li>
+					</ul>
+				</div>				
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-link legitRipple" data-dismiss="modal">Cancel</button>
+				<button type="button" class="btn btn-danger legitRipple pull-left">Leave Chat</button>
+				<button type="button" class="btn btn-primary legitRipple">Save</button>				
+			</div>
+		</div>
+	</div>
+</div>
+
+
+</body>
+</html>

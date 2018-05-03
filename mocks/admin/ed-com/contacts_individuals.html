@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Individuals :: Contacts :: Ed-com :: Ed-admin</title>
+	<link rel="icon" type="image/png" href="../../assets/images/favicon.png" />
+
+
+	<!-- Core JS files -->
+	<script type="text/javascript" src="../../assets/js/core/libraries/jquery.min.js"></script>
+	<script type="text/javascript" src="../../assets/js/core/libraries/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../../assets/js/plugins/ui/nicescroll.min.js"></script>
+	<script type="text/javascript" src="../../assets/js/plugins/ui/drilldown.js"></script>
+	<!-- /core JS files -->
+	
+	<script type="text/javascript" src="../../assets/js/plugins/ui/moment/moment.min.js"></script>
+	<script type="text/javascript" src="../../assets/js/plugins/ui/fullcalendar/fullcalendar.min.js"></script>	
+	<script type="text/javascript" src="../../assets/js/plugins/forms/styling/uniform.min.js"></script>	
+	<script type="text/javascript" src="../../assets/js/plugins/pickers/pickmeup/pickmeup.min.js"></script>
+	<script type="text/javascript" src="../../assets/js/plugins/pickers/calendar.js"></script>
+	<script type="text/javascript" src="../../assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
+	<script type="text/javascript" src="../../assets/js/plugins/forms/selects/bootstrap_select.min.js"></script>
+	<script type="text/javascript" src="../../assets/js/plugins/forms/styling/switchery.min.js"></script>
+	<script type="text/javascript" src="../../assets/js/plugins/forms/tags/tokenfield.min.js"></script>
+	<script type="text/javascript" src="../../assets/js/plugins/visualization/jstree/jstree.min.js"></script>
+	
+	<script type="text/javascript" src="../../assets/js/core/app-components.js"></script>
+	<script type="text/javascript" src="../../assets/js/admin/ed-com/contacts_individuals.js"></script>
+
+	<script type="text/javascript" src="../../assets/js/plugins/ui/ripple.min.js"></script>
+
+
+</head>
+
+<body class="portal-admin module-ed-com left-nav-individuals">
+
+	<div class="component-header"></div>
+
+
+
+	<!-- Page container -->
+	<div class="page-container">
+
+		<!-- Page content -->
+		<div class="page-content">
+
+			<!-- Main sidebar -->
+			<div class="sidebar sidebar-main sidebar-default">
+				<div class="components-left-navigation"></div>
+			</div>
+			<!-- /main sidebar -->
+
+
+			<!-- Main content -->
+            <div class="content-wrapper">
+
+                <div class="line-wrapper">
+					<ul class="breadcrumb breadcrumb-caret pull-left">
+						<li><a href="#"><i class="icon-home2 position-left"></i></a></li>
+						<li><a href="message.html">Ed-com</a></li>
+						<li>Contacts</li>
+						<li class="active">Individuals</li>
+					</ul>
+				</div>
+
+
+				<div class="panel panel-default border-top-orange border-top-xlg">
+					<div class="panel-heading">
+						<h6 class="panel-title">Individuals</h6>
+                    </div>
+
+					<div class="panel-body">
+						<div class="navbar navbar-default navbar-xs navbar-component">
+							<ul class="nav navbar-nav no-border visible-xs-block">
+								<li><a class="text-center collapsed" data-toggle="collapse" data-target="#navbar-filter2"><i class="icon-menu7"></i></a></li>
+							</ul>
+							<div class="navbar-collapse collapse" id="navbar-filter2" >
+								<ul class="nav navbar-nav has-extra-button-1x">
+									<li>
+										<a href="#" data-toggle="modal" class="pull-left" data-target="#modal-org-tree"><strong class="text-semibold">Organisation</strong><span></span></a>
+										<span href="#" data-toggle="popover" data-target="#selected-organisations-popover" class="selected-organisations cursor-pointer mr-10 ml-5 label label-success legitRipple pull-right" style="margin-top:4px;"></span>
+									</li>
+									<li class="dropdown">
+										<select class="multiselect" multiple="multiple" data-title="Person Entity">
+											<option value="1" selected>Student</option>
+											<option value="2">Staff</option>
+										</select>
+									</li>
+									<li class="dropdown">
+										<a href="#" class="dropdown-toggle pull-left" data-toggle="modal" data-target="#modal-programs-tree"><span class="text-semibold">Program</span><span class="activities"></span></a>
+										<span data-toggle="popover" data-target="#selected-programs-popover" class="selected-programs cursor-pointer mr-10 label label-success legitRipple valign-middle" style="margin-top:4px;"></span>
+									</li>
+									<li>
+										<input type="text" class="form-control" size="17" placeholder="Search...">
+									</li>
+									<li class="dropdown group-by">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="text-semibold">Group By:</span> <span class="value"> </span><span class="caret"></span></a>
+                                        <ul class="dropdown-menu group-by">
+                                            <li id="organisation"><a href="#">Organisation</a></li>
+                                            <li id="person-entity"><a href="#">Person Entity</a></li>
+                                            <li id="program"><a href="#">Program</a></li>
+                                        </ul>
+                                    </li>	
+									<li class="dropdown group-by-person" style="display:none;">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="text-semibold">Group By:</span> <span class="value"> </span><span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">Organisation</a></li>
+                                            <li><a href="#">Program</a></li>
+                                        </ul>
+                                    </li>		
+									<li class="dropdown group-by-organisation" style="display:none;">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="text-semibold">Group By:</span> <span class="value"> </span><span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">Person Entity</a></li>
+                                            <li><a href="#">Program</a></li>
+                                        </ul>
+                                    </li>	
+									<li class="dropdown group-by-program" style="display:none;">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="text-semibold">Group By:</span> <span class="value"> </span><span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">Organisation</a></li>
+                                            <li><a href="#">Person Entity</a></li>
+                                        </ul>
+                                    </li>
+									<li class="text-center beside-extra">
+										<button type="button" class="btn btn-link search legitRipple"><i class="icon-search4"></i></button>
+									</li>
+
+								</ul>
+                            </div>
+						</div>
+						<div class="text-center content-group content-divider" id="martha-root-campus">
+							<span class="pt-10 pb-10">Martha Root Campus</span>
+						</div>
+						<span class="text-semibold">Mathematics 1, G11</span>
+						<div class="row mt-10">
+							<div class="col-lg-3 col-md-6">
+								<div class="panel panel-body thumb-contact">
+									<div class="media">
+										<div class="media-left">
+											<a href="../../assets/images/avatar20-big.jpg" data-popup="lightbox">
+												<img src="../../assets/images/avatar20-big.jpg" class="img-circle img-lg" alt="">
+											</a>
+										</div>
+
+										<div class="media-body">
+											<h6 class="media-heading">Andrew Smith</h6>
+											<span class="text-muted">Student at G11</span>
+										</div>
+
+										<div class="media-right media-middle">
+											<ul class="icons-list">
+												<li class="dropdown">
+													<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-more"></i></a>
+													<ul class="dropdown-menu dropdown-menu-right">
+														<li><a href="#"><i class="icon-comment-discussion pull-right"></i> Start chat</a></li>
+														<li><a href="#"><i class="icon-mail5 pull-right"></i> Send Email</a></li>
+														<li class="divider"></li>
+														<li><a href="#"><i class="icon-statistics pull-right"></i> Ed-com History</a></li>
+													</ul>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-lg-3 col-md-6">
+								<div class="panel panel-body thumb-contact">
+									<div class="media">
+										<div class="media-left">
+											<a href="../../assets/images/avatar17-big.jpg" data-popup="lightbox">
+												<img src="../../assets/images/avatar17-big.jpg" class="img-circle img-lg" alt="">
+											</a>
+										</div>
+
+										<div class="media-body">
+											<h6 class="media-heading">Jane White</h6>
+											<span class="text-muted"> Student at G11</span>
+										</div>
+
+										<div class="media-right media-middle">
+											<ul class="icons-list">
+												<li class="dropdown">
+													<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-more"></i></a>
+													<ul class="dropdown-menu dropdown-menu-right">
+														<li><a href="#"><i class="icon-comment-discussion pull-right"></i> Start chat</a></li>
+														<li><a href="#"><i class="icon-mail5 pull-right"></i> Send Email</a></li>
+														<li class="divider"></li>
+														<li><a href="#"><i class="icon-statistics pull-right"></i> Ed-com History</a></li>
+													</ul>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-lg-3 col-md-6">
+								<div class="panel panel-body thumb-contact">
+									<div class="media">
+										<div class="media-left">
+											<a href="../../assets/images/avatar1.jpg" data-popup="lightbox">
+												<img src="../../assets/images/avatar1.jpg" class="img-circle img-lg" alt="">
+											</a>
+										</div>
+
+										<div class="media-body">
+											<h6 class="media-heading">Joe Smith</h6>
+											<span class="text-muted">Student at G11</span>
+										</div>
+
+										<div class="media-right media-middle">
+											<ul class="icons-list">
+												<li class="dropdown">
+													<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-more"></i></a>
+													<ul class="dropdown-menu dropdown-menu-right">
+														<li><a href="#"><i class="icon-comment-discussion pull-right"></i> Start chat</a></li>
+														<li><a href="#"><i class="icon-mail5 pull-right"></i> Send Email</a></li>
+														<li class="divider"></li>
+														<li><a href="#"><i class="icon-statistics pull-right"></i> Ed-com History</a></li>
+													</ul>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>				
+						<span class="text-semibold">Mathematics 2, G12</span>
+						<div class="row mt-10">
+							<div class="col-lg-3 col-md-6">
+								<div class="panel panel-body thumb-contact">
+									<div class="media">
+										<div class="media-left">
+											<a href="../../assets/images/avatar20-big.jpg" data-popup="lightbox">
+												<img src="../../assets/images/avatar12.jpg" class="img-circle img-lg" alt="">
+											</a>
+										</div>
+
+										<div class="media-body">
+											<h6 class="media-heading">Alan Brown</h6>
+											<span class="text-muted">Student at G12</span>
+										</div>
+
+										<div class="media-right media-middle">
+											<ul class="icons-list">
+												<li class="dropdown">
+													<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-more"></i></a>
+													<ul class="dropdown-menu dropdown-menu-right">
+														<li><a href="#"><i class="icon-comment-discussion pull-right"></i> Start chat</a></li>
+														<li><a href="#"><i class="icon-mail5 pull-right"></i> Send Email</a></li>
+														<li class="divider"></li>
+														<li><a href="#"><i class="icon-statistics pull-right"></i> Ed-com History</a></li>
+													</ul>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-lg-3 col-md-6">
+								<div class="panel panel-body thumb-contact">
+									<div class="media">
+										<div class="media-left">
+											<a href="../../assets/images/avatar17-big.jpg" data-popup="lightbox">
+												<img src="../../assets/images/avatar17-big.jpg" class="img-circle img-lg" alt="">
+											</a>
+										</div>
+
+										<div class="media-body">
+											<h6 class="media-heading">Jane White</h6>
+											<span class="text-muted"> Student at G12</span>
+										</div>
+
+										<div class="media-right media-middle">
+											<ul class="icons-list">
+												<li class="dropdown">
+													<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-more"></i></a>
+													<ul class="dropdown-menu dropdown-menu-right">
+														<li><a href="#"><i class="icon-comment-discussion pull-right"></i> Start chat</a></li>
+														<li><a href="#"><i class="icon-mail5 pull-right"></i> Send Email</a></li>
+														<li class="divider"></li>
+														<li><a href="#"><i class="icon-statistics pull-right"></i> Ed-com History</a></li>
+													</ul>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-lg-3 col-md-6">
+								<div class="panel panel-body thumb-contact">
+									<div class="media">
+										<div class="media-left">
+											<a href="../../assets/images/avatar1.jpg" data-popup="lightbox">
+												<img src="../../assets/images/avatar6.jpg" class="img-circle img-lg" alt="">
+											</a>
+										</div>
+
+										<div class="media-body">
+											<h6 class="media-heading">Edward House</h6>
+											<span class="text-muted">Student at G12</span>
+										</div>
+
+										<div class="media-right media-middle">
+											<ul class="icons-list">
+												<li class="dropdown">
+													<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-more"></i></a>
+													<ul class="dropdown-menu dropdown-menu-right">
+														<li><a href="#"><i class="icon-comment-discussion pull-right"></i> Start chat</a></li>
+														<li><a href="#"><i class="icon-mail5 pull-right"></i> Send Email</a></li>
+														<li class="divider"></li>
+														<li><a href="#"><i class="icon-statistics pull-right"></i> Ed-com History</a></li>
+													</ul>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>				
+						<div class="text-center content-group content-divider" id="martha-root-campus">
+							<span class="pt-10 pb-10">Leroy Campus</span>
+						</div>
+						<span class="text-semibold">Mathematics 1, G11</span>
+						<div class="row mt-10">
+							<div class="col-lg-3 col-md-6">
+								<div class="panel panel-body thumb-contact">
+									<div class="media">
+										<div class="media-left">
+											<a href="../../assets/images/avatar20-big.jpg" data-popup="lightbox">
+												<img src="../../assets/images/avatar20-big.jpg" class="img-circle img-lg" alt="">
+											</a>
+										</div>
+
+										<div class="media-body">
+											<h6 class="media-heading">Andrew Smith</h6>
+											<span class="text-muted">Student at G11</span>
+										</div>
+
+										<div class="media-right media-middle">
+											<ul class="icons-list">
+												<li class="dropdown">
+													<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-more"></i></a>
+													<ul class="dropdown-menu dropdown-menu-right">
+														<li><a href="#"><i class="icon-comment-discussion pull-right"></i> Start chat</a></li>
+														<li><a href="#"><i class="icon-mail5 pull-right"></i> Send Email</a></li>
+														<li class="divider"></li>
+														<li><a href="#"><i class="icon-statistics pull-right"></i> Ed-com History</a></li>
+													</ul>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-lg-3 col-md-6">
+								<div class="panel panel-body thumb-contact">
+									<div class="media">
+										<div class="media-left">
+											<a href="../../assets/images/avatar17-big.jpg" data-popup="lightbox">
+												<img src="../../assets/images/avatar17-big.jpg" class="img-circle img-lg" alt="">
+											</a>
+										</div>
+
+										<div class="media-body">
+											<h6 class="media-heading">Jane White</h6>
+											<span class="text-muted"> Student at G11</span>
+										</div>
+
+										<div class="media-right media-middle">
+											<ul class="icons-list">
+												<li class="dropdown">
+													<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-more"></i></a>
+													<ul class="dropdown-menu dropdown-menu-right">
+														<li><a href="#"><i class="icon-comment-discussion pull-right"></i> Start chat</a></li>
+														<li><a href="#"><i class="icon-mail5 pull-right"></i> Send Email</a></li>
+														<li class="divider"></li>
+														<li><a href="#"><i class="icon-statistics pull-right"></i> Ed-com History</a></li>
+													</ul>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-lg-3 col-md-6">
+								<div class="panel panel-body thumb-contact">
+									<div class="media">
+										<div class="media-left">
+											<a href="../../assets/images/avatar1.jpg" data-popup="lightbox">
+												<img src="../../assets/images/avatar1.jpg" class="img-circle img-lg" alt="">
+											</a>
+										</div>
+
+										<div class="media-body">
+											<h6 class="media-heading">Joe Smith</h6>
+											<span class="text-muted">Student at G11</span>
+										</div>
+
+										<div class="media-right media-middle">
+											<ul class="icons-list">
+												<li class="dropdown">
+													<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-more"></i></a>
+													<ul class="dropdown-menu dropdown-menu-right">
+														<li><a href="#"><i class="icon-comment-discussion pull-right"></i> Start chat</a></li>
+														<li><a href="#"><i class="icon-mail5 pull-right"></i> Send Email</a></li>
+														<li class="divider"></li>
+														<li><a href="#"><i class="icon-statistics pull-right"></i> Ed-com History</a></li>
+													</ul>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>				
+						<span class="text-semibold">Mathematics 2, G12</span>
+						<div class="row mt-10">
+							<div class="col-lg-3 col-md-6">
+								<div class="panel panel-body thumb-contact">
+									<div class="media">
+										<div class="media-left">
+											<a href="../../assets/images/avatar20-big.jpg" data-popup="lightbox">
+												<img src="../../assets/images/avatar12.jpg" class="img-circle img-lg" alt="">
+											</a>
+										</div>
+
+										<div class="media-body">
+											<h6 class="media-heading">Alan Brown</h6>
+											<span class="text-muted">Student at G12</span>
+										</div>
+
+										<div class="media-right media-middle">
+											<ul class="icons-list">
+												<li class="dropdown">
+													<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-more"></i></a>
+													<ul class="dropdown-menu dropdown-menu-right">
+														<li><a href="#"><i class="icon-comment-discussion pull-right"></i> Start chat</a></li>
+														<li><a href="#"><i class="icon-mail5 pull-right"></i> Send Email</a></li>
+														<li class="divider"></li>
+														<li><a href="#"><i class="icon-statistics pull-right"></i> Ed-com History</a></li>
+													</ul>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-lg-3 col-md-6">
+								<div class="panel panel-body thumb-contact">
+									<div class="media">
+										<div class="media-left">
+											<a href="../../assets/images/avatar17-big.jpg" data-popup="lightbox">
+												<img src="../../assets/images/avatar17-big.jpg" class="img-circle img-lg" alt="">
+											</a>
+										</div>
+
+										<div class="media-body">
+											<h6 class="media-heading">Jane White</h6>
+											<span class="text-muted"> Student at G12</span>
+										</div>
+
+										<div class="media-right media-middle">
+											<ul class="icons-list">
+												<li class="dropdown">
+													<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-more"></i></a>
+													<ul class="dropdown-menu dropdown-menu-right">
+														<li><a href="#"><i class="icon-comment-discussion pull-right"></i> Start chat</a></li>
+														<li><a href="#"><i class="icon-mail5 pull-right"></i> Send Email</a></li>
+														<li class="divider"></li>
+														<li><a href="#"><i class="icon-statistics pull-right"></i> Ed-com History</a></li>
+													</ul>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-lg-3 col-md-6">
+								<div class="panel panel-body thumb-contact">
+									<div class="media">
+										<div class="media-left">
+											<a href="../../assets/images/avatar1.jpg" data-popup="lightbox">
+												<img src="../../assets/images/avatar6.jpg" class="img-circle img-lg" alt="">
+											</a>
+										</div>
+
+										<div class="media-body">
+											<h6 class="media-heading">Edward House</h6>
+											<span class="text-muted">Student at G12</span>
+										</div>
+
+										<div class="media-right media-middle">
+											<ul class="icons-list">
+												<li class="dropdown">
+													<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-more"></i></a>
+													<ul class="dropdown-menu dropdown-menu-right">
+														<li><a href="#"><i class="icon-comment-discussion pull-right"></i> Start chat</a></li>
+														<li><a href="#"><i class="icon-mail5 pull-right"></i> Send Email</a></li>
+														<li class="divider"></li>
+														<li><a href="#"><i class="icon-statistics pull-right"></i> Ed-com History</a></li>
+													</ul>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<!-- /Main/ content -->
+
+		</div>
+
+	</div>
+	<!-- /page container -->
+
+	<div class="component-footer"></div>
+	<div id="selected-programs-popover" style="display: none;">
+		<div class="icons scrolled-list mt-5 ht_clone_left pr-10 programs-list">
+
+		</div>
+	</div>
+	<div id="modal-programs-tree" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h5 class="modal-title">Program</h5>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-md-6 col-xs-12">
+							<div class="form-group form-group-material">
+								<input type="text" placeholder="Search" class="form-control programs-tree-search">
+							</div>
+						</div>
+						<div class="col-xs-12">
+
+							<!-- Begin TREE -->
+							<div class="programs-tree overlay-tree">
+								<ul>
+									<li><strong>K-13</strong>
+										<ul>
+											<li>Early Childhood
+												<ul>
+													<li data-type="program" data-jstree='{"selected": "true"}'>EC1
+														<ul>
+															<li data-type="activity">Languages</li>
+															<li data-type="activity">Numbers</li>
+														</ul>
+													</li>
+													<li data-type="program">EC2
+														<ul>
+															<li data-type="activity">Languages</li>
+															<li data-type="activity">Numbers</li>
+														</ul>
+
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+							<!-- /End TREE -->
+
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" data-dismiss="modal" class="btn btn-link mr-5 legitRipple">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="selected-organisations-popover" style="display: none;">
+		<div class="list-icons scrolled-list mt-5 organisation-list">
+
+		</div>
+	</div>
+	<div id="modal-org-tree" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h5 class="modal-title">Organisation</h5>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-md-6 col-sm-12">
+							<div class="form-group form-group-material">
+								<input type="text" placeholder="Search" class="form-control organisation-search">
+							</div>
+						</div>
+						<div class="col-md-6 col-sm-12">
+							<div class="checkbox checkbox-right checkbox-switchery switchery-xs mt-20 mr-5 text-right">
+								<label>
+									<input type="checkbox" checked id="modal-switchery" />
+									<div id="modal-option-multi-select"><span class="text-size-mini">Multi Select</span></div>
+									<div id="modal-option-single-select" style="display:none;"><span class="text-size-mini">Single Select</span></div>
+
+								</label>
+							</div>
+						</div>
+						<div class="col-xs-12 modal-tree-wrapper">
+							<div class="organisation-tree_modal overlay-tree">
+								<ul>
+									<li title="Parent Organisation" class="text-semibold" data-jstree='{"type":"group"}'>ABC Group
+										<ul>
+											<li class="text-semibold" title="Continent">Asia
+
+												<ul>
+													<li title="School"><strong class="text-size-small">LOUISE GREGORY TRAINING</strong>
+
+														<ul>
+															<li title="Campus"><strong class="text-size-small">Siegfried Campus</strong>
+
+															</li>
+															<li data-jstree='{"selected":"true"}' title="Campus"><strong class="text-size-small">Corinne Campus</strong>
+															</li>
+														</ul>
+													</li>
+													<li  title="School"><strong class="text-size-small">HYDE PRIMARY</strong>
+
+														<ul>
+															<li data-jstree='{"selected":"true"}' title="Campus"><strong class="text-size-small">Hyde Primary Campus</strong>
+
+																<ul>
+																	<li>Human Resources Department</li>
+																</ul>
+															</li>
+														</ul>
+													</li>
+													<li  title="School"><strong class="text-size-small">WILHELM UNIVERSITY</strong>
+
+														<ul>
+															<li title="Campus"><strong class="text-size-small">Baldwin Campus</strong>
+
+															</li>
+															<li title="Campus"><strong class="text-size-small">Olinga Campus</strong>
+
+															</li>
+															<li title="Campus"><strong class="text-size-small">William Sears Campus</strong>
+																<ul>
+																	<li>Auditorium</li>
+																	<li>Building A
+																		<ul>
+																			<li>Room A11</li>
+																			<li>Room A12</li>
+																		</ul>
+																	</li>
+																	<li>Building B
+																		<ul>
+																			<li>Room B101</li>
+																			<li>Room B102</li>
+																		</ul>
+																	</li>
+																	<li>Gymnasium A1</li>
+																	<li>Gymnasium A2</li>
+
+
+																</ul>
+															</li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+											<li title="Continent" class="text-semibold">Europe
+												<ul>
+													<li title="School"><strong class="text-size-small">ABC ACADEMY</strong>
+
+														<ul>
+															<li title="Campus"><strong class="text-size-small">ABC Academy Campus</strong>
+															</li>
+														</ul>
+													</li>
+
+													<li title="Campus"><strong class="text-size-small">MARTHA ROOT INSTITUTE</strong>
+														<ul>
+															<li title="Campus"><strong class="text-size-small">Leroy Campus</strong>
+																<ul>
+																	<li>Human Resources Department</li>
+																</ul>
+														 	</li>
+														</ul>
+
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+
+							</div>
+							<div class="organisation-tree_modal independent overlay-tree" data-three-state="false" style="display: none;">
+								<ul>
+									<li title="Parent Organisation" class="text-semibold" data-jstree='{"type":"group"}'>ABC Group
+										<ul>
+											<li class="text-semibold" title="Continent">Asia
+
+												<ul>
+													<li title="School"><strong class="text-size-small">LOUISE GREGORY TRAINING</strong>
+
+														<ul>
+															<li title="Campus"><strong class="text-size-small">Siegfried Campus</strong>
+
+															</li>
+															<li data-jstree='{"selected":"true"}' title="Campus"><strong class="text-size-small">Corinne Campus</strong>
+															</li>
+														</ul>
+													</li>
+													<li  title="School"><strong class="text-size-small">HYDE PRIMARY</strong>
+
+														<ul>
+															<li data-jstree='{"selected":"true"}' title="Campus"><strong class="text-size-small">Hyde Primary Campus</strong>
+
+																<ul>
+																	<li>Human Resources Department</li>
+																</ul>
+															</li>
+														</ul>
+													</li>
+													<li  title="School"><strong class="text-size-small">WILHELM UNIVERSITY</strong>
+
+														<ul>
+															<li title="Campus"><strong class="text-size-small">Baldwin Campus</strong>
+
+															</li>
+															<li title="Campus"><strong class="text-size-small">Olinga Campus</strong>
+
+															</li>
+															<li title="Campus"><strong class="text-size-small">William Sears Campus</strong>
+																<ul>
+																	<li>Faculty of Arts</li>
+																	<li>Faculty of Business</li>
+																	<li>Faculty of Engineering
+																		<ul>
+																			<li>Computer Engineering Department</li>
+																			<li>Civil Engineering Department</li>
+																			<li>Biomedical Engineering Department</li>
+																			<li>Electronic Engineering Department</li>
+																		</ul>
+																	</li>
+																	<li>Faculty of Science
+																		<ul>
+																			<li>Chemistry Department</li>
+																		</ul>
+																	</li>
+																</ul>
+															</li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+											<li title="Continent" class="text-semibold">Europe
+												<ul>
+													<li title="School"><strong class="text-size-small">ABC ACADEMY</strong>
+
+														<ul>
+															<li title="Campus"><strong class="text-size-small">ABC Academy Campus</strong>
+															</li>
+														</ul>
+													</li>
+
+													<li title="Campus"><strong class="text-size-small">MARTHA ROOT INSTITUTE</strong>
+														<ul>
+															<li title="Campus"><strong class="text-size-small">Leroy Campus</strong>
+																<ul>
+																	<li>Human Resources Department</li>
+																</ul>
+														 	</li>
+														</ul>
+
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" data-dismiss="modal" class="btn btn-link mr-5">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
